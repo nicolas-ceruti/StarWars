@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
     padding: 10px;
-    margin: 200px 200px 200px 200px;
+    margin: 20px 250px 200px 250px;
     min-height: 50vh;
     display: flex;
     justify-content: center;
@@ -25,14 +25,14 @@ export const Card = styled.div`
     font-family: 'Star Jedi', arial;;
     letter-spacing: 2px;
     padding: 10px;
-    margin: 20px;
+    margin: 30px;
     height: 130px;
     min-width: 330px;
     display: flex;  
     border-radius: 5px;
     background: #1d1e1f;
     cursor: pointer;
-    padding: 15px;
+    padding: 18px;
 
     -webkit-box-shadow: 16px 19.5px 22px -17.5px #5e5e5e;
     -moz-box-shadow: 16px 19.5px 22px -17.5px #5e5e5e;
@@ -59,8 +59,32 @@ export const Title = styled.div`
     display: flex;
 `;
 
+export const Info = styled.div`
+    height: 80%;
+    width: 90%;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+`;
 
-export const Filter = styled.div`
+export const InfoBlock = styled.div`
+    height: 20%;
+    width: 100%;
+    margin: 1px;
+    display: flex;
+    justify-content: left;
+    padding: 5px;
+`;
+
+export const Description = styled.div`
+    margin: 0px 0px 0px 8px;
+    font-size: 15px;
+    font-family: 'Star Wars',sans-serif;
+    letter-spacing: 2px;
+`;
+
+export const BaseBoard = styled.div`
     padding: 10px;
     margin: 15px 200px 10px 200px;
     width: 100%;
@@ -115,4 +139,72 @@ export const Button = styled.div`
     border: none;
     margin: 0px 30px;
     
+`;
+
+export const Filter = styled.div`
+    padding: 10px;
+    margin: 20px 0px 50px 150px;
+    width: 100%;
+    min-height: 50px;
+
+    display: flex;
+    justify-content: left;
+
+    @media (max-width: 1400px){
+        margin: 20px 0px 40px 100px;
+    }
+
+    @media (max-width: 1100px){
+        margin: 20px 0px 40px 50px;
+    }
+
+    @media (max-width: 500px){
+        margin: 20px 0px 20px  10px;
+    }
+`;
+
+export const FilterSelectBox = styled.select`
+    max-height: 40px;
+    min-width: 100px;
+    border-radius: 25px 25px 0px 0px;
+    background-color: #484848;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Star Jedi',arial;
+    letter-spacing: 3px;
+
+`;
+
+export const FilterSelectBoxOption = styled.option`
+    min-height: 25px;
+    min-width: 100px;
+    background-color: #484848;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Star Jedi',arial;
+    letter-spacing: 3px;
+
+`;
+
+export const FilterInput = styled.input`
+    max-height: 20px;
+    min-width: 200px;
+    background-color: #484848;
+    border-radius: 25px 25px 0px 0px;
+    border: none;
+    padding: 10px;
+    color: white;
+    font-size: 17px;
+    font-family: 'Star Jedi',arial;
+    letter-spacing: 3px;
+    margin: 0px 0px 0px 10px;
+
+    @media (max-width: 400px){
+        min-width: 150px;
+    }
+
 `;
