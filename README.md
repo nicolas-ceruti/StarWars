@@ -1,9 +1,7 @@
 # StarWars
 
-![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/6f980372-17f7-4a50-87ab-39a12e727dfd)
+![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/fbe1c0d4-e0da-4055-a98b-4cdc5ae190e9)
+![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/020c93a8-4601-4084-b65d-27213b3eaaae)
 
-![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/964131c1-4352-438e-8323-96cb997d8d08)
+![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/c2c05a9f-d181-43bf-b166-17679e60b32a)
 
-![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/7c46bae7-6d02-4e57-9cf8-8f897879f1dd)
-
-![image](https://github.com/nicolas-ceruti/StarWars/assets/79486020/b3179e7d-d5ba-4d22-ac52-88aee7aa4232)
