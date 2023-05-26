@@ -24,14 +24,13 @@ export const Container = styled.div`
 `;
 
 export const PeopleInfo = styled.div`
-    height: 700px;
+    min-height: 700px;
     min-width: 250px;
     width: 40%;
     display: inline-block;
     margin: 10px 10px 0px 10px;
 
     @media (max-width: 1400px){
-        height: 50vh;
         width: 80%;
         
     }
@@ -47,7 +46,6 @@ export const PeopleInfo = styled.div`
 
 export const Title = styled.div`
     width: 90%;
-    height: 40px;
     background-color: #242424;
     border-radius: 5px;
     margin: 10px;
@@ -65,7 +63,6 @@ export const Title = styled.div`
 
 export const SubTitle = styled.div`
     width: 90%;
-    height: 40px;
     background-color: gray;
     margin: 10px;
     padding: 10px;
@@ -83,7 +80,7 @@ export const Description = styled.div`
     width: 90%;
     min-height: 20px;
     background-color: #efefef;
-    border-radiu: 5px;
+    border-radius: 5px;
     margin: 10px;
     padding: 10px;
     display: flex;

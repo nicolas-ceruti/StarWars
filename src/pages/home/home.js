@@ -13,12 +13,8 @@ function App() {
   const navigate = useNavigate()
   const [page, setPage] = useState(1);
   const [itens, setItens] = useState([]);
-  const [filtereditens, setFilteredItens] = useState([]);
-  const [gender, setGender] = useState('');
-  const [name, setName] = useState('');
-  const [bdayYear, setBdayYear] = useState('');
-
-
+  const [filteredItens, setFilteredItens] = useState([]);
+  const [gender, setGender] = useState('')
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,17 +39,38 @@ function App() {
     }
   }, []);
 
+
+  //Esta função foi implementada pois 'people/17' na API retorna o erro 404
+  function handleId(page, i) { 
+    let tempId = page * 10 + 1 + i - 10;
+    if((tempId) >= 17){
+      return tempId + 1;
+    }else{
+      return tempId;
+    }
+
+  }
+
   useEffect(() => {
-    setFilteredItens(itens.map((obj, i) => obj.gender = gender))
-  }, [bdayYear, gender, name]);
+    setFilteredItens(itens.filter((obj, i ) => obj.gender == gender))
+    console.log(filteredItens)
+  }, [gender]);
 
   return (
     <Container>
 
-      
+      <Filter>
+        <FilterSelectBox value={gender} onChange={(e) => setGender(e.target.value)}>
+          <FilterSelectBoxOption value=''>All</FilterSelectBoxOption>
+          <FilterSelectBoxOption value='male'>male</FilterSelectBoxOption>
+          <FilterSelectBoxOption value='female'>female</FilterSelectBoxOption>
+          <FilterSelectBoxOption value='n/a'>n/a</FilterSelectBoxOption>
+        </FilterSelectBox>
+      </Filter>
 
-      {itens.filter((obj, i) => i >= `${page - 1}0` && i < `${page}0`).map((obj, i) => (
-        <Card key={i} onClick={(e) => navigate(`/profile/${page * 10 + 1 + i - 10}`)}>
+
+      {(filteredItens.length > 0 ? filteredItens : itens).filter((obj, i) => i >= `${page - 1}0` && i < `${page}0`).map((obj, i) => (
+        <Card key={i} onClick={(e) => navigate(`/profile/${obj.name}`)}>
           <div>
             <Title>{obj.name}</Title>
             <Info>
