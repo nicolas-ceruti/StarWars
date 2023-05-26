@@ -5,9 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { TbCircleArrowLeft, TbCircleArrowRight } from 'react-icons/tb'
 import { GiRocket, GiAlienSkull, GiFilmStrip } from 'react-icons/gi'
 
-
-
-
 function App() {
 
   const navigate = useNavigate()
@@ -15,6 +12,9 @@ function App() {
   const [itens, setItens] = useState([]);
   const [filteredItens, setFilteredItens] = useState([]);
   const [gender, setGender] = useState('')
+  const [name, setName] = useState('')
+  const [birthYear, setBirthYear] = useState('')
+  const firstAcess = true;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,6 +26,7 @@ function App() {
         const responses = await Promise.all(requests);
         const allResults = responses.flatMap(response => response.data.results);
         setItens(allResults);
+        setFilteredItens(allResults);
         localStorage.setItem('people', JSON.stringify(allResults))
       } catch (error) {
         console.error('Erro ao buscar os itens:', error);
@@ -39,22 +40,17 @@ function App() {
     }
   }, []);
 
-
-  //Esta função foi implementada pois 'people/17' na API retorna o erro 404
-  function handleId(page, i) { 
-    let tempId = page * 10 + 1 + i - 10;
-    if((tempId) >= 17){
-      return tempId + 1;
-    }else{
-      return tempId;
-    }
-
-  }
-
   useEffect(() => {
-    setFilteredItens(itens.filter((obj, i ) => obj.gender == gender))
+    console.log(name)
+    setFilteredItens(itens.filter((obj, i ) => 
+      obj.name.toLowerCase().includes(name.toLowerCase()) &&
+      obj.birth_year.toLowerCase().includes(birthYear.toLowerCase()) &&
+      (gender != '' ? (obj.gender == gender) : (obj.gender != ''))
+      ))
+
     console.log(filteredItens)
-  }, [gender]);
+    setPage(1)
+  }, [gender, name, birthYear]);
 
   return (
     <Container>
@@ -66,10 +62,12 @@ function App() {
           <FilterSelectBoxOption value='female'>female</FilterSelectBoxOption>
           <FilterSelectBoxOption value='n/a'>n/a</FilterSelectBoxOption>
         </FilterSelectBox>
+        <FilterInput value={name} onChange={(e) => setName(e.target.value)} placeholder='name'></FilterInput>
+        <FilterInput value={birthYear} onChange={(e) => setBirthYear(e.target.value)} placeholder='birth year'></FilterInput>
       </Filter>
 
 
-      {(filteredItens.length > 0 ? filteredItens : itens).filter((obj, i) => i >= `${page - 1}0` && i < `${page}0`).map((obj, i) => (
+      {(filteredItens.length > 0  ? filteredItens : itens).filter((obj, i) => i >= `${page - 1}0` && i < `${page}0`).map((obj, i) => (
         <Card key={i} onClick={(e) => navigate(`/profile/${obj.name}`)}>
           <div>
             <Title>{obj.name}</Title>

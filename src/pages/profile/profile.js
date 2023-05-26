@@ -1,10 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Container, Card, PeopleInfo, AddInfo, AddInfoContainer, Description, Title, DescriptionText, SubTitle } from './style';
+import { Container, PeopleInfo, Description, Title, DescriptionText} from './style';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import { CiLineHeight } from 'react-icons/ci'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {GiAlienSkull, GiInfestedMass, GiFallingBoulder, GiFilmProjector, GiDinosaurBones, GiRocketThruster} from 'react-icons/gi'
+import {FaAmericanSignLanguageInterpreting, FaBirthdayCake, FaHeadSideMask, FaTruckMonster} from 'react-icons/fa'
+import {IoIosPeople, IoIosNuclear} from 'react-icons/io'
+import {TbBrandPlanetscale, TbMountain} from 'react-icons/tb'
+import {BsGenderAmbiguous} from 'react-icons/bs'
+import {SiMattermost} from 'react-icons/si'
 
 
 
@@ -102,23 +108,23 @@ function App() {
           <Title>{people.name}</Title>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Specie: {specie.name ? specie.name : 'UNDEFINED'}</DescriptionText>
+            <GiAlienSkull /><DescriptionText>Specie: {specie.name ? specie.name : 'UNDEFINED'}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Language: {specie.language ? specie.language : 'UNDEFINED'}</DescriptionText>
+            <FaAmericanSignLanguageInterpreting /><DescriptionText>Language: {specie.language ? specie.language : 'UNDEFINED'}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Gender: {people.gender}</DescriptionText>
+            <BsGenderAmbiguous /><DescriptionText>Gender: {people.gender}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Birth Year: {people.birth_year}</DescriptionText>
+            <FaBirthdayCake /><DescriptionText>Birth Year: {people.birth_year}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Mass: {people.mass}</DescriptionText>
+            <GiInfestedMass /><DescriptionText>Mass: {people.mass}</DescriptionText>
           </Description>
 
           <Description>
@@ -126,33 +132,33 @@ function App() {
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Hair Color: {people.hair_color}</DescriptionText>
+            <FaHeadSideMask /><DescriptionText>Hair Color: {people.hair_color}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Skin Color: {people.skin_color}</DescriptionText>
+            <GiDinosaurBones /><DescriptionText>Skin Color: {people.skin_color}</DescriptionText>
           </Description>
 
           <Title>Homeworld {homeworld.name}</Title>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Name: {homeworld.name}</DescriptionText>
+            <TbBrandPlanetscale /><DescriptionText>Name: {homeworld.name}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Climate: {homeworld.climate}</DescriptionText>
+            <SiMattermost /><DescriptionText>Climate: {homeworld.climate}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Gravity: {homeworld.gravity}</DescriptionText>
+            <GiFallingBoulder /><DescriptionText>Gravity: {homeworld.gravity}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Terrain: {homeworld.terrain}</DescriptionText>
+            <TbMountain /><DescriptionText>Terrain: {homeworld.terrain}</DescriptionText>
           </Description>
 
           <Description>
-            <CiLineHeight /><DescriptionText>Population: {homeworld.population}</DescriptionText>
+            <IoIosPeople /><DescriptionText>Population: {homeworld.population}</DescriptionText>
           </Description>
 
         </PeopleInfo>
@@ -163,12 +169,12 @@ function App() {
             starships.map((obj) => {
               return (
                 <Description>
-                  <CiLineHeight /><DescriptionText>{obj.name}</DescriptionText>
+                  <GiRocketThruster /><DescriptionText>{obj.name}</DescriptionText>
                 </Description>
               )
             }) :
             <Description style={{ 'backgroundColor': '#e97575' }}>
-              <CiLineHeight /><DescriptionText>Not contain starships</DescriptionText>
+              <IoIosNuclear /><DescriptionText>Not contain starships</DescriptionText>
             </Description>
           }
 
@@ -177,12 +183,12 @@ function App() {
             films.map((obj) => {
               return (
                 <Description>
-                  <CiLineHeight /><DescriptionText>{obj.title}</DescriptionText>
+                  <GiFilmProjector /><DescriptionText>{obj.title}</DescriptionText>
                 </Description>
               )
             }) :
             <Description style={{ 'backgroundColor': '#e97575' }}>
-              <CiLineHeight /><DescriptionText>Not contain films</DescriptionText>
+              <IoIosNuclear /><DescriptionText>Not contain films</DescriptionText>
             </Description>
           }
 
@@ -191,12 +197,12 @@ function App() {
             vehicle.map((obj) => {
               return (
                 <Description>
-                  <CiLineHeight /><DescriptionText>{`${obj.name} - ${obj.model}`}</DescriptionText>
+                  <FaTruckMonster /><DescriptionText>{`${obj.name} - ${obj.model}`}</DescriptionText>
                 </Description>
               )
             }) :
             <Description style={{ 'backgroundColor': '#e97575' }}>
-              <CiLineHeight /><DescriptionText>Not contain vehicles</DescriptionText>
+              <IoIosNuclear /><DescriptionText>Not contain vehicles</DescriptionText>
             </Description>
           }
 

@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Container = styled.div`
     padding: 10px;
     margin: 20px 250px 200px 250px;
-    min-height: 50vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -13,7 +13,7 @@ export const Container = styled.div`
     }
 
     @media (max-width: 1100px){
-        margin: 150px 20px 200px 20px;
+        margin: 20px 20px 200px 20px;
     }
 
     @media (max-width: 500px){
@@ -139,23 +139,31 @@ export const Button = styled.div`
     border: none;
     margin: 0px 30px;
     
+    @media (max-width: 400px){
+        margin: 0px 0px 10px  0px;
+    }
 `;
 
 export const Filter = styled.div`
+    background-color: #1d1e208f;
+    border-radius: 5px;
     padding: 10px;
-    margin: 20px 0px 50px 150px;
+    margin: 20px 0px 50px 50px;
     width: 100%;
-    min-height: 50px;
 
     display: flex;
     justify-content: left;
 
     @media (max-width: 1400px){
-        margin: 20px 0px 40px 100px;
+        margin: 20px 0px 40px 50px;
     }
 
     @media (max-width: 1100px){
-        margin: 20px 0px 40px 50px;
+        margin: 20px 0px 40px 20px;
+    }
+
+    @media (max-width: 800px){
+        display: inline-block;
     }
 
     @media (max-width: 500px){
@@ -166,7 +174,7 @@ export const Filter = styled.div`
 export const FilterSelectBox = styled.select`
     max-height: 40px;
     min-width: 100px;
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 10px;
     background-color: #484848;
     border: none;
     padding: 10px;
@@ -174,6 +182,11 @@ export const FilterSelectBox = styled.select`
     font-size: 17px;
     font-family: 'Star Jedi',arial;
     letter-spacing: 3px;
+
+    @media (max-width: 800px){
+        min-width: 85%;
+        margin: 5px;
+    }
 
 `;
 
@@ -194,7 +207,7 @@ export const FilterInput = styled.input`
     max-height: 20px;
     min-width: 200px;
     background-color: #484848;
-    border-radius: 25px 25px 0px 0px;
+    border-radius: 10px;
     border: none;
     padding: 10px;
     color: white;
@@ -203,8 +216,9 @@ export const FilterInput = styled.input`
     letter-spacing: 3px;
     margin: 0px 0px 0px 10px;
 
-    @media (max-width: 400px){
-        min-width: 150px;
+    @media (max-width: 800px){
+        min-width: 80%;
+        margin: 5px;
     }
 
 `;

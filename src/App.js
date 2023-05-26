@@ -8,7 +8,6 @@ function App() {
         <Routes>
           <Route path='/home' element={ <Home/> }/>
           <Route path='/profile/:id' element={ <Profile/> }/>
-          <Route path="*" element={<p>404 - Página não encontrada</p>} />
         </Routes>
       </BrowserRouter>
     );
